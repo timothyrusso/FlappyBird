@@ -246,13 +246,13 @@ export default function HomeScreen() {
             <Image image={bird} y={birdY} x={birdX} width={64} height={48} />
           </Group>
 
-          <Text
+          {/* <Text
             x={width / 4}
             y={100}
             text={`SCORE: ${score.toString()}`}
             font={font}
             color="white"
-          />
+          /> */}
         </Canvas>
       </GestureDetector>
     </GestureHandlerRootView>
