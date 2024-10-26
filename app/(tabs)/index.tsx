@@ -6,6 +6,7 @@ import {
   Text,
   matchFont,
   FontWeight,
+  LinearGradient,
 } from '@shopify/react-native-skia';
 import { useEffect, useState } from 'react';
 import { Platform, useWindowDimensions } from 'react-native';
@@ -199,7 +200,11 @@ export default function HomeScreen() {
     return { x: width / 4 + 32, y: birdY.value + 24 };
   });
 
-  const fontFamily = Platform.select({ ios: 'Helvetica', default: 'serif' });
+  const fontFamily = Platform.select({
+    ios: 'Arial',
+    android: 'sans-serif',
+    default: 'Arial',
+  });
   const fontStyle = {
     fontFamily,
     fontSize: 40,
@@ -242,10 +247,11 @@ export default function HomeScreen() {
           </Group>
 
           <Text
-            x={100}
+            x={width / 4}
             y={100}
-            text={`Score: ${score.toString()}`}
+            text={`SCORE: ${score.toString()}`}
             font={font}
+            color="white"
           />
         </Canvas>
       </GestureDetector>
